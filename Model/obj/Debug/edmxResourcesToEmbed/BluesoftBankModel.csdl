@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BlueSoftBankModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Cuenta">
+    <Key>
+      <PropertyRef Name="NumeroCuenta" />
+    </Key>
+    <Property Name="NumeroCuenta" Type="Int32" Nullable="false" />
+    <Property Name="Saldo" Type="Double" />
+    <Property Name="CiudadOrigen" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="IdTipoCuenta" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TipoCuenta" Relationship="Self.FK_CuentaTipoCuenta" FromRole="Cuenta" ToRole="TipoCuenta" />
+    <NavigationProperty Name="Movimientoes" Relationship="Self.FK_Movimiento_Cuenta" FromRole="Cuenta" ToRole="Movimiento" />
+  </EntityType>
+  <EntityType Name="Movimiento">
+    <Key>
+      <PropertyRef Name="IdMovimiento" />
+    </Key>
+    <Property Name="IdMovimiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Valor" Type="Double" />
+    <Property Name="Fecha" Type="DateTime" Precision="0" />
+    <Property Name="CiudadOrigen" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="NumeroCuenta" Type="Int32" />
+    <NavigationProperty Name="Cuenta" Relationship="Self.FK_Movimiento_Cuenta" FromRole="Movimiento" ToRole="Cuenta" />
+  </EntityType>
+  <EntityType Name="TipoCuenta">
+    <Key>
+      <PropertyRef Name="IdTipoCuenta" />
+    </Key>
+    <Property Name="IdTipoCuenta" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Cuentas" Relationship="Self.FK_CuentaTipoCuenta" FromRole="TipoCuenta" ToRole="Cuenta" />
+  </EntityType>
+  <Association Name="FK_CuentaTipoCuenta">
+    <End Role="TipoCuenta" Type="Self.TipoCuenta" Multiplicity="0..1" />
+    <End Role="Cuenta" Type="Self.Cuenta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoCuenta">
+        <PropertyRef Name="IdTipoCuenta" />
+      </Principal>
+      <Dependent Role="Cuenta">
+        <PropertyRef Name="IdTipoCuenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Movimiento_Cuenta">
+    <End Role="Cuenta" Type="Self.Cuenta" Multiplicity="0..1" />
+    <End Role="Movimiento" Type="Self.Movimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cuenta">
+        <PropertyRef Name="NumeroCuenta" />
+      </Principal>
+      <Dependent Role="Movimiento">
+        <PropertyRef Name="NumeroCuenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BlueSoftBankEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cuentas" EntityType="Self.Cuenta" />
+    <EntitySet Name="Movimientoes" EntityType="Self.Movimiento" />
+    <EntitySet Name="TipoCuentas" EntityType="Self.TipoCuenta" />
+    <AssociationSet Name="FK_CuentaTipoCuenta" Association="Self.FK_CuentaTipoCuenta">
+      <End Role="TipoCuenta" EntitySet="TipoCuentas" />
+      <End Role="Cuenta" EntitySet="Cuentas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Movimiento_Cuenta" Association="Self.FK_Movimiento_Cuenta">
+      <End Role="Cuenta" EntitySet="Cuentas" />
+      <End Role="Movimiento" EntitySet="Movimientoes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

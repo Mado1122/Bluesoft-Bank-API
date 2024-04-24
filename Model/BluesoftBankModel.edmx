@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BlueSoftBankModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cuenta">
+          <Key>
+            <PropertyRef Name="NumeroCuenta" />
+          </Key>
+          <Property Name="NumeroCuenta" Type="int" Nullable="false" />
+          <Property Name="Saldo" Type="float" />
+          <Property Name="CiudadOrigen" Type="nvarchar" MaxLength="30" />
+          <Property Name="IdTipoCuenta" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Movimiento">
+          <Key>
+            <PropertyRef Name="IdMovimiento" />
+          </Key>
+          <Property Name="IdMovimiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Valor" Type="float" />
+          <Property Name="Fecha" Type="date" />
+          <Property Name="CiudadOrigen" Type="nvarchar" MaxLength="30" />
+          <Property Name="NumeroCuenta" Type="int" />
+        </EntityType>
+        <EntityType Name="TipoCuenta">
+          <Key>
+            <PropertyRef Name="IdTipoCuenta" />
+          </Key>
+          <Property Name="IdTipoCuenta" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <Association Name="FK_CuentaTipoCuenta">
+          <End Role="TipoCuenta" Type="Self.TipoCuenta" Multiplicity="0..1" />
+          <End Role="Cuenta" Type="Self.Cuenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoCuenta">
+              <PropertyRef Name="IdTipoCuenta" />
+            </Principal>
+            <Dependent Role="Cuenta">
+              <PropertyRef Name="IdTipoCuenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Movimiento_Cuenta">
+          <End Role="Cuenta" Type="Self.Cuenta" Multiplicity="0..1" />
+          <End Role="Movimiento" Type="Self.Movimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuenta">
+              <PropertyRef Name="NumeroCuenta" />
+            </Principal>
+            <Dependent Role="Movimiento">
+              <PropertyRef Name="NumeroCuenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BlueSoftBankModelStoreContainer">
+          <EntitySet Name="Cuenta" EntityType="Self.Cuenta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Movimiento" EntityType="Self.Movimiento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoCuenta" EntityType="Self.TipoCuenta" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CuentaTipoCuenta" Association="Self.FK_CuentaTipoCuenta">
+            <End Role="TipoCuenta" EntitySet="TipoCuenta" />
+            <End Role="Cuenta" EntitySet="Cuenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Movimiento_Cuenta" Association="Self.FK_Movimiento_Cuenta">
+            <End Role="Cuenta" EntitySet="Cuenta" />
+            <End Role="Movimiento" EntitySet="Movimiento" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BlueSoftBankModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cuenta">
+          <Key>
+            <PropertyRef Name="NumeroCuenta" />
+          </Key>
+          <Property Name="NumeroCuenta" Type="Int32" Nullable="false" />
+          <Property Name="Saldo" Type="Double" />
+          <Property Name="CiudadOrigen" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="IdTipoCuenta" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TipoCuenta" Relationship="Self.FK_CuentaTipoCuenta" FromRole="Cuenta" ToRole="TipoCuenta" />
+          <NavigationProperty Name="Movimientoes" Relationship="Self.FK_Movimiento_Cuenta" FromRole="Cuenta" ToRole="Movimiento" />
+        </EntityType>
+        <EntityType Name="Movimiento">
+          <Key>
+            <PropertyRef Name="IdMovimiento" />
+          </Key>
+          <Property Name="IdMovimiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Valor" Type="Double" />
+          <Property Name="Fecha" Type="DateTime" Precision="0" />
+          <Property Name="CiudadOrigen" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="NumeroCuenta" Type="Int32" />
+          <NavigationProperty Name="Cuenta" Relationship="Self.FK_Movimiento_Cuenta" FromRole="Movimiento" ToRole="Cuenta" />
+        </EntityType>
+        <EntityType Name="TipoCuenta">
+          <Key>
+            <PropertyRef Name="IdTipoCuenta" />
+          </Key>
+          <Property Name="IdTipoCuenta" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Cuentas" Relationship="Self.FK_CuentaTipoCuenta" FromRole="TipoCuenta" ToRole="Cuenta" />
+        </EntityType>
+        <Association Name="FK_CuentaTipoCuenta">
+          <End Role="TipoCuenta" Type="Self.TipoCuenta" Multiplicity="0..1" />
+          <End Role="Cuenta" Type="Self.Cuenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoCuenta">
+              <PropertyRef Name="IdTipoCuenta" />
+            </Principal>
+            <Dependent Role="Cuenta">
+              <PropertyRef Name="IdTipoCuenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Movimiento_Cuenta">
+          <End Role="Cuenta" Type="Self.Cuenta" Multiplicity="0..1" />
+          <End Role="Movimiento" Type="Self.Movimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuenta">
+              <PropertyRef Name="NumeroCuenta" />
+            </Principal>
+            <Dependent Role="Movimiento">
+              <PropertyRef Name="NumeroCuenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BlueSoftBankEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cuentas" EntityType="Self.Cuenta" />
+          <EntitySet Name="Movimientoes" EntityType="Self.Movimiento" />
+          <EntitySet Name="TipoCuentas" EntityType="Self.TipoCuenta" />
+          <AssociationSet Name="FK_CuentaTipoCuenta" Association="Self.FK_CuentaTipoCuenta">
+            <End Role="TipoCuenta" EntitySet="TipoCuentas" />
+            <End Role="Cuenta" EntitySet="Cuentas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Movimiento_Cuenta" Association="Self.FK_Movimiento_Cuenta">
+            <End Role="Cuenta" EntitySet="Cuentas" />
+            <End Role="Movimiento" EntitySet="Movimientoes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BlueSoftBankModelStoreContainer" CdmEntityContainer="BlueSoftBankEntities">
+          <EntitySetMapping Name="Cuentas">
+            <EntityTypeMapping TypeName="BlueSoftBankModel.Cuenta">
+              <MappingFragment StoreEntitySet="Cuenta">
+                <ScalarProperty Name="NumeroCuenta" ColumnName="NumeroCuenta" />
+                <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+                <ScalarProperty Name="CiudadOrigen" ColumnName="CiudadOrigen" />
+                <ScalarProperty Name="IdTipoCuenta" ColumnName="IdTipoCuenta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Movimientoes">
+            <EntityTypeMapping TypeName="BlueSoftBankModel.Movimiento">
+              <MappingFragment StoreEntitySet="Movimiento">
+                <ScalarProperty Name="IdMovimiento" ColumnName="IdMovimiento" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="CiudadOrigen" ColumnName="CiudadOrigen" />
+                <ScalarProperty Name="NumeroCuenta" ColumnName="NumeroCuenta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoCuentas">
+            <EntityTypeMapping TypeName="BlueSoftBankModel.TipoCuenta">
+              <MappingFragment StoreEntitySet="TipoCuenta">
+                <ScalarProperty Name="IdTipoCuenta" ColumnName="IdTipoCuenta" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

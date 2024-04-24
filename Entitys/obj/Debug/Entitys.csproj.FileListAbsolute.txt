@@ -1,0 +1,7 @@
+D:\Bluesoft Bank Project\Web API\Entitys\bin\Debug\Entitys.dll.config
+D:\Bluesoft Bank Project\Web API\Entitys\bin\Debug\Entitys.dll
+D:\Bluesoft Bank Project\Web API\Entitys\bin\Debug\Entitys.pdb
+D:\Bluesoft Bank Project\Web API\Entitys\obj\Debug\Entitys.csproj.AssemblyReference.cache
+D:\Bluesoft Bank Project\Web API\Entitys\obj\Debug\Entitys.csproj.CoreCompileInputs.cache
+D:\Bluesoft Bank Project\Web API\Entitys\obj\Debug\Entitys.dll
+D:\Bluesoft Bank Project\Web API\Entitys\obj\Debug\Entitys.pdb

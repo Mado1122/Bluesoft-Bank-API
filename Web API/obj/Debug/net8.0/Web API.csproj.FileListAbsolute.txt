@@ -1,0 +1,62 @@
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\appsettings.Development.json
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\appsettings.json
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\Web API.exe
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\Web API.deps.json
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\Web API.runtimeconfig.json
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\Web API.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\Web API.pdb
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\EntityFramework.SqlServer.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\EntityFramework.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\System.CodeDom.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\System.Data.SqlClient.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\System.Drawing.Common.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\System.Security.Permissions.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\System.Windows.Extensions.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\Entitys.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\Logic.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\Model.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\Logic.pdb
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\Logic.dll.config
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\Entitys.pdb
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\Entitys.dll.config
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\Model.pdb
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\Model.dll.config
+D:\Bluesoft Bank Project\Web API\Web API\obj\Debug\net8.0\Web API.csproj.AssemblyReference.cache
+D:\Bluesoft Bank Project\Web API\Web API\obj\Debug\net8.0\Web API.GeneratedMSBuildEditorConfig.editorconfig
+D:\Bluesoft Bank Project\Web API\Web API\obj\Debug\net8.0\Web API.AssemblyInfoInputs.cache
+D:\Bluesoft Bank Project\Web API\Web API\obj\Debug\net8.0\Web API.AssemblyInfo.cs
+D:\Bluesoft Bank Project\Web API\Web API\obj\Debug\net8.0\Web API.csproj.CoreCompileInputs.cache
+D:\Bluesoft Bank Project\Web API\Web API\obj\Debug\net8.0\Web API.MvcApplicationPartsAssemblyInfo.cs
+D:\Bluesoft Bank Project\Web API\Web API\obj\Debug\net8.0\Web API.MvcApplicationPartsAssemblyInfo.cache
+D:\Bluesoft Bank Project\Web API\Web API\obj\Debug\net8.0\staticwebassets.build.json
+D:\Bluesoft Bank Project\Web API\Web API\obj\Debug\net8.0\staticwebassets.development.json
+D:\Bluesoft Bank Project\Web API\Web API\obj\Debug\net8.0\staticwebassets\msbuild.Web API.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Bluesoft Bank Project\Web API\Web API\obj\Debug\net8.0\staticwebassets\msbuild.build.Web API.props
+D:\Bluesoft Bank Project\Web API\Web API\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Web API.props
+D:\Bluesoft Bank Project\Web API\Web API\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Web API.props
+D:\Bluesoft Bank Project\Web API\Web API\obj\Debug\net8.0\staticwebassets.pack.json
+D:\Bluesoft Bank Project\Web API\Web API\obj\Debug\net8.0\scopedcss\bundle\Web API.styles.css
+D:\Bluesoft Bank Project\Web API\Web API\obj\Debug\net8.0\Web API.csproj.CopyComplete
+D:\Bluesoft Bank Project\Web API\Web API\obj\Debug\net8.0\Web API.dll
+D:\Bluesoft Bank Project\Web API\Web API\obj\Debug\net8.0\refint\Web API.dll
+D:\Bluesoft Bank Project\Web API\Web API\obj\Debug\net8.0\Web API.pdb
+D:\Bluesoft Bank Project\Web API\Web API\obj\Debug\net8.0\Web API.genruntimeconfig.cache
+D:\Bluesoft Bank Project\Web API\Web API\obj\Debug\net8.0\ref\Web API.dll
+D:\Bluesoft Bank Project\Web API\Web API\bin\Debug\net8.0\Web API.dll.config
